@@ -32,6 +32,7 @@ mongoose.connect(
       name: String,
       user: String
     });
+    model.emmit('conneted');
   }
 );
 
