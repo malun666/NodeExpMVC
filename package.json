@@ -1,0 +1,30 @@
+{
+  "name": "node_exp",
+  "version": "1.0.0",
+  "description": "nodejs + express + mongoose + mvc => aicoder.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malun666/NodeExpMVC.git"
+  },
+  "keywords": [
+    "mongoose",
+    "mvc"
+  ],
+  "author": "flydragonml@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malun666/NodeExpMVC/issues"
+  },
+  "homepage": "https://github.com/malun666/NodeExpMVC#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.1",
+    "mongoose": "^5.5.11"
+  }
+}
