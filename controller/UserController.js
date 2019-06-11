@@ -1,13 +1,29 @@
-const model = require('../model/ModelSchema');
+const userService = require('../service/UserService');
 module.exports = {
-  list: function(req, res, next) {
-    res.send('userlist');
-    let list =  model.User.find({ name: 'john', age: { $gte: 18 }}, function (err, docs) {
+  UserList: async function(req, res, next) {
+    try {
+      const docs = await userService.getUserList({ name: 'john', age: { $gte: 18 }});
       res.json(docs);
-    });
+    } catch(e) {
+      res.json({code: 1, msg: 'error'});
+    }
   },
-  getUserById: function(req, res, next) {
-    // 获取id，删除数据
-    next();
+  getUserById: async function(req, res, next) {
+    // next();
+    try {
+      const user = await userService.getUserById(req.params.id);
+      res.json(user);
+    } catch(e) {
+      res.json({code: 1, msg: 'error'});
+    }
+  },
+  AddUser: async function(req, res, next) {
+    try {
+      const user = await userService.addUser(req.body);
+      res.json(user);
+    } catch(e) {
+      console.log(e);
+      res.json({code: 1, msg: e});
+    }
   }
 }
